@@ -59,7 +59,7 @@ export class DocumentPreviewController{
 
                         pdf.getPage(1).then(page =>{
 
-                            let viewport = page.getViewPort(1);
+                            let viewport = page.getViewport(1);
 
                             let canvas = document.createElement('canvas');
 
