@@ -14,10 +14,25 @@ export class WhatsAppController{
 
         console.log("WhatsAppController OK");
 
+        this.initAuth();
         this.elementsPrototype();
         this.loadElements();
         this.initEvents();
         this._firebase = new Firebase();        
+
+    }
+
+    initAuth(){
+
+        this._firebase.initAuth().then(response =>{
+
+            console.log('response',response);
+
+        }).catch(err =>{
+
+            console.log(err);
+
+        });
 
     }
 
