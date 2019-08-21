@@ -15,6 +15,7 @@ export class Firebase {
                 storageBucket: "",
                 messagingSenderId: "324495320436",
                 appId: "1:324495320436:web:3f03080eaefcdc5a"
+                
               }
         
 
