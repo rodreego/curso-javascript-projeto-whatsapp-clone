@@ -30,12 +30,12 @@ export class WhatsAppController{
 
             this._user = new User();
 
-            let userRef = User.findByEmail(response.user.email);
+            let userRef = User.findByEmail(response.user.uid);
 
             userRef.set({
 
                 name: response.user.displayName,
-                email: response.user.email,
+                email: response.user.uid,
                 photo: response.user.photoURL 
             
             }).then(()=>{
