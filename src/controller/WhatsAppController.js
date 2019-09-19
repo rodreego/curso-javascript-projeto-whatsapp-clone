@@ -16,7 +16,7 @@ export class WhatsAppController{
 
         console.log("WhatsAppController OK");
 
-        this._firebase = new Firebase();
+        this._firebase = new Firebase();            
         this.initAuth();
         this.elementsPrototype();
         this.loadElements();
@@ -26,34 +26,41 @@ export class WhatsAppController{
 
     initAuth(){
 
+        
+
         this._firebase.initAuth().then(response =>{
 
             this._user = new User();
 
             let userRef = User.findByEmail(response.user.uid);
 
+            console.log(response.user);
+
             userRef.set({
 
                 name: response.user.displayName,
                 email: response.user.uid,
                 photo: response.user.photoURL 
+                
             
             }).then(()=>{
-
+                
+                
                 this.el.appContent.css({
 
-                    display: 'flex'
+                    display: 'flex'                    
     
-                });
-
-            });            
-
+                });                
+                //console.log(response.user);
+            });        
+                        
+                        
         }).catch(err =>{
 
             console.log(err);
 
         });
-
+               
     }
 
     loadElements(){
@@ -134,10 +141,8 @@ export class WhatsAppController{
 
             return json;
 
-        }
-
-
-
+        }       
+   
 
     }
 
