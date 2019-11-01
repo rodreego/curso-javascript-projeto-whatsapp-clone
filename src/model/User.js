@@ -9,7 +9,7 @@ export class User extends Model{
 
         super();
 
-        
+        this._data = {}
 
         if(id) this.getById(id);
     }
@@ -18,10 +18,10 @@ export class User extends Model{
     set name(value){this._data.name = value}
 
     get email(){return this._data.email; }
-    set name(value){this._data.email = value}
+    set email(value){this._data.email = value}
 
-    get name(){return this._data.photo; }
-    set name(value){this._data.photo = value}
+    get photo(){return this._data.photo; }
+    set photo(value){this._data.photo = value}
 
 
 
